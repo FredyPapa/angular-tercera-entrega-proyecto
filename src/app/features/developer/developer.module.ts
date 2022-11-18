@@ -21,7 +21,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     DeveloperRoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class DeveloperModule { }

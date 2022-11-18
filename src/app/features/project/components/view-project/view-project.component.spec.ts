@@ -1,4 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { ViewProjectComponent } from './view-project.component';
 
@@ -8,7 +12,16 @@ describe('ViewProjectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewProjectComponent ]
+      declarations: [ ViewProjectComponent ],
+      imports:[
+        HttpClientModule,
+        ReactiveFormsModule,
+        SharedModule
+      ],
+      providers: [
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} }
+    ]
     })
     .compileComponents();
 

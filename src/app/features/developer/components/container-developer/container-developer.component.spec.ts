@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { ContainerDeveloperComponent } from './container-developer.component';
 
@@ -8,7 +11,12 @@ describe('ContainerDeveloperComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ContainerDeveloperComponent ]
+      declarations: [ ContainerDeveloperComponent ],
+      imports:[
+        HttpClientModule,
+        SharedModule,
+        ReactiveFormsModule
+      ]
     })
     .compileComponents();
 

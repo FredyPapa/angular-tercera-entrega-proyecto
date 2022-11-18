@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { ContainerProjectComponent } from './container-project.component';
 
@@ -8,7 +11,12 @@ describe('ContainerProjectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ContainerProjectComponent ]
+      declarations: [ ContainerProjectComponent ],
+      imports:[
+        HttpClientModule,
+        ReactiveFormsModule,
+        SharedModule
+      ]
     })
     .compileComponents();
 

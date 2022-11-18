@@ -9,6 +9,10 @@ import { environment } from 'src/environments/environment';
 })
 export class DeveloperService {
   listDevelopers!:Developer[];
+  headers:HttpHeaders = new HttpHeaders({
+    'content-type': 'application/json',
+    'encoding': 'UTF-8'
+  });
 
   constructor(
     private http:HttpClient
@@ -27,10 +31,7 @@ export class DeveloperService {
 
   getDeveloper(id:number):Observable<Developer>{
     return this.http.get<Developer>(`${environment.api}/developer/${id}`,{
-      headers:new HttpHeaders({
-        'content-type': 'application/json',
-        'encoding': 'UTF-8'
-      })
+      headers: this.headers
     }).pipe(
       catchError(this.manejarError)
     )
